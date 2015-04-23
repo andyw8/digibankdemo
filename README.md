@@ -1,5 +1,7 @@
 # Digibank demo
 
+[![Code
+Climate](https://codeclimate.com/github/pedrosmmoreira/digibankdemo/badges/gpa.svg)](https://codeclimate.com/github/pedrosmmoreira/digibankdemo)
 [![Circle
 CI](https://circleci.com/gh/pedrosmmoreira/digibankdemo/tree/master.svg?style=svg)](https://circleci.com/gh/pedrosmmoreira/digibankdemo/tree/master)
 

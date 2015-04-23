@@ -65,6 +65,8 @@ GEM
     capybara-webkit (1.5.1)
       capybara (>= 2.3.0, < 2.5.0)
       json
+    codeclimate-test-reporter (0.4.6)
+      simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -270,7 +272,8 @@ DEPENDENCIES
   bourbon (~> 4.2.0)
   bundler-audit
   byebug
-  capybara-webkit (>= 1.2.0)
+  capybara-webkit (>= 1.5.0)
+  codeclimate-test-reporter
   coffee-rails (~> 4.1.0)
   database_cleaner
   delayed_job_active_record
@@ -297,7 +300,6 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   shoulda-matchers
   simple_form
-  simplecov
   spring
   spring-commands-rspec
   timecop

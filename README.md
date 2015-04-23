@@ -1,5 +1,8 @@
 # Digibank demo
 
+[![Circle
+CI](https://circleci.com/gh/pedrosmmoreira/digibankdemo/tree/master.svg?style=svg)](https://circleci.com/gh/pedrosmmoreira/digibankdemo/tree/master)
+
 ## Getting Started
 
 After you have cloned this repo, run this setup script to set up your machine

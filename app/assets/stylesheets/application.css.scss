@@ -5,4 +5,7 @@
 @import "base/grid-settings";
 @import "neat";
 @import "base/base";
-@import "refills/flashes";
+
+@import "application/header";
+@import "application/footer";
+@import "views/home";

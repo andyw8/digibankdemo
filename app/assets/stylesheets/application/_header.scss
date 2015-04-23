@@ -1,0 +1,22 @@
+.banner {
+  background-color: $yellow;
+  color: $base-background-color;
+  padding: $gutter;
+
+  .wrapper {
+    @include outer-container;
+
+    .logo {
+      @include span-columns(1);
+
+      text-transform: uppercase;
+    }
+
+    .nav {
+      @include shift(9);
+      ul li {
+        display: inline-block;
+      }
+    }
+  }
+}

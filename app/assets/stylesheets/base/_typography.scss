@@ -24,14 +24,14 @@ p {
 }
 
 a {
-  color: $action-color;
+  color: $base-font-color;
   text-decoration: none;
   transition: all 0.1s linear;
 
   &:active,
   &:focus,
   &:hover {
-    border-bottom: 1px solid $action-color;
+    border-bottom: 1px solid $base-font-color;
   }
 
   &:active,

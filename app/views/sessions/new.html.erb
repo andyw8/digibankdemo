@@ -1,0 +1,13 @@
+<section class="session">
+  <div class="title">
+    <h2><%= t(".title") %></h2>
+
+    <p><%= t(".greeting") %></p>
+    <hr>
+    <%= link_to t(".forgot_password"), new_password_path %>
+  </div>
+
+  <div class="form">
+    <%= render partial: "/sessions/form" %>
+  </div>
+</section>

@@ -1,9 +1,15 @@
 <section class="dashboard">
   <div class="title">
-    <h2>Account Dashboard</h2>
+    <h2>Dashboard</h2>
+
+    <b>Account balance:</b>
+    <%= number_to_currency(@dashboard.account_balance, unit: @dashboard.account_currency) %>
     <hr>
     <div>
       <%= link_to "Sign out", sign_out_path, method: :delete %>
     </div>
+  </div>
+
+  <div class="main">
   </div>
 </section>

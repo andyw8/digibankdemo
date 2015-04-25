@@ -18,8 +18,7 @@ with the necessary dependencies to run and test this app:
 
     % ./bin/setup
 
-This command will also seed the development db with two users and their 
-respective accounts.
+This command will also seed the development db with an user with an account.
 
 To create a User with an account via the console, run `bundle exec rails c` and
 use the following command:

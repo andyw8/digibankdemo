@@ -24,7 +24,7 @@ To create a User with an account via the console, run `bundle exec rails c` and
 use the following command:
 
 ```
-RegistrationForm.new(name: "user name", email: "user email", password: "user_password")
+RegistrationForm.new(name: "user name", email: "user email", password: "user_password").submit
 ```
 
 It assumes you have a machine equipped with Ruby, Postgres, etc. If not, set up

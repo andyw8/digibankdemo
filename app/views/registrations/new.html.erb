@@ -1,0 +1,19 @@
+<section class="registration">
+  <div class="title">
+    <h2>Register for an account</h2>
+
+    <p>We just need some information to get you started on Digibank</p>
+    <hr>
+  </div>
+
+  <%= simple_form_for @registration, url: registration_path do |form_builder| %>
+      <%= form_builder.input :name %>
+      <%= form_builder.input :email %>
+      <%= form_builder.input :password %>
+
+      <div class="form-action">
+        <%= form_builder.submit "Register account" %>
+      </div>
+    </div>
+  <% end %>
+</section>

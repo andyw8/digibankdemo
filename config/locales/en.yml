@@ -5,7 +5,6 @@ en:
         "%m/%d/%Y"
       with_weekday:
         "%a %m/%d/%y"
-
   time:
     formats:
       default:
@@ -14,6 +13,28 @@ en:
         "%b %-d, %Y"
       short:
         "%B %d"
-
   titles:
-    application: Digibank demo
+    application: Digibank - Simple Online Banking
+  clearance_mailer:
+    change_password:
+      closing: If you didn't request this, ignore this email. Your password has
+        not been changed.
+      link_text: Change my password
+      opening: "Someone, hopefully you, requested we send you a link to change
+        your password:"
+  sessions:
+    new:
+      title: Sign in
+      greeting: Welcome back!
+      forgot_password: Forgot password?
+  passwords:
+    create:
+      description: You will receive an email within the next few minutes. It
+        contains instructions for changing your password.
+    edit:
+      description: Your password has been reset. Choose a new password below.
+      title: Change your password
+    new:
+      description: To be emailed a link to reset your password, please enter
+        your email address.
+      title: Reset your password

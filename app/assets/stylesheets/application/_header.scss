@@ -1,22 +1,27 @@
 .banner {
   background-color: $yellow;
   color: $base-background-color;
-  padding: $gutter;
+  padding: $small-spacing;
 
   .wrapper {
     @include outer-container;
+  }
 
-    .logo {
-      @include span-columns(1);
+  .nav {
+    text-align: right;
+  }
+}
 
-      text-transform: uppercase;
-    }
+.banner .logo {
+  @include span-columns(1);
 
-    .nav {
-      @include shift(9);
-      ul li {
-        display: inline-block;
-      }
+  text-transform: uppercase;
+
+  a {
+    color: $base-background-color;
+
+    &:hover {
+      border-bottom: 1px solid $base-background-color;
     }
   }
 }

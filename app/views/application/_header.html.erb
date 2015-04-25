@@ -1,15 +1,19 @@
 <header class="banner" role="banner">
   <div class="wrapper">
     <div class="logo">
-      <b>Digibank</b>
+      <%= link_to root_path do %>
+        <b>Digibank</b>
+      <% end %>
     </div>
 
     <nav class="nav">
-      <ul>
-        <li><%= link_to "About" %></li>
-        <li><%= link_to "About" %></li>
-        <li><%= link_to "About" %></li>
-      </ul>
+    <% if signed_in? %>
+      <p class="signed-in">
+        <span><%= current_user.name %></span>
+      </p>
+    <% else %>
+      <%= link_to 'Sign in', sign_in_path %>
+    <% end %>
     </nav>
   </div>
 </header>

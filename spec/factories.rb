@@ -18,4 +18,20 @@ FactoryGirl.define do
     balance { BigDecimal.new("0.0") }
     user nil
   end
+
+  factory :transaction do
+    account nil
+    operation_id 1
+    operation_type "MyString"
+  end
+
+  factory :credit do
+    account nil
+    amount { BigDecimal.new("0.0") }
+  end
+
+  factory :debit do
+    account nil
+    amount { BigDecimal.new("0.0") }
+  end
 end

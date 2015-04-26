@@ -16,16 +16,16 @@ describe Dashboard, "#account_balance" do
 
     dashboard = Dashboard.new(account)
 
-    expect(dashboard.account_balance).to eq account.balance
+    expect(dashboard.balance).to eq account.balance
   end
 end
 
 describe Dashboard, "#account_currency" do
   it "returns the unit symbol mapping of the account currency" do
-    account = double(:account, currency: "euros")
+    account = double(:account, currency_unit: "€")
 
     dashboard = Dashboard.new(account)
 
-    expect(dashboard.account_currency).to eq "€"
+    expect(dashboard.currency).to eq "€"
   end
 end

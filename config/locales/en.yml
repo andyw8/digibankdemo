@@ -38,3 +38,6 @@ en:
       description: To be emailed a link to reset your password, please enter
         your email address.
       title: Reset your password
+  transfers:
+    new:
+      submit: Transfer

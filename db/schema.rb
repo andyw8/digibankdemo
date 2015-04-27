@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425131657) do
+ActiveRecord::Schema.define(version: 20150426233036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,28 @@ ActiveRecord::Schema.define(version: 20150425131657) do
   end
 
   add_index "accounts", ["user_id"], name: "index_accounts_on_user_id", using: :btree
+
+  create_table "credits", force: :cascade do |t|
+    t.integer  "account_id"
+    t.money    "amount",              scale: 2
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.integer  "emitting_account_id"
+    t.money    "account_balance",     scale: 2
+  end
+
+  add_index "credits", ["account_id"], name: "index_credits_on_account_id", using: :btree
+
+  create_table "debits", force: :cascade do |t|
+    t.integer  "account_id"
+    t.money    "amount",               scale: 2
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "receiving_account_id"
+    t.money    "account_balance",      scale: 2
+  end
+
+  add_index "debits", ["account_id"], name: "index_debits_on_account_id", using: :btree
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -42,6 +64,18 @@ ActiveRecord::Schema.define(version: 20150425131657) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
+  create_table "transactions", force: :cascade do |t|
+    t.integer  "account_id"
+    t.integer  "operation_id"
+    t.string   "operation_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "transactions", ["account_id"], name: "index_transactions_on_account_id", using: :btree
+  add_index "transactions", ["operation_id"], name: "index_transactions_on_operation_id", using: :btree
+  add_index "transactions", ["operation_type"], name: "index_transactions_on_operation_type", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
@@ -56,4 +90,7 @@ ActiveRecord::Schema.define(version: 20150425131657) do
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
   add_foreign_key "accounts", "users"
+  add_foreign_key "credits", "accounts"
+  add_foreign_key "debits", "accounts"
+  add_foreign_key "transactions", "accounts"
 end

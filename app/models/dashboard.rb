@@ -1,17 +1,19 @@
 class Dashboard
-  CURRENCY_MAP = { euros: "€" }.freeze
-
   attr_reader :account
 
   def initialize(account)
     @account = account
   end
 
-  def account_balance
+  def balance
     account.balance
   end
 
-  def account_currency
-    CURRENCY_MAP.fetch("#{account.currency}".to_sym)
+  def currency
+    account.currency_unit
+  end
+
+  def transactions
+    account.transactions.map(&:operation)
   end
 end

@@ -8,20 +8,31 @@ if Rails.env.development? || Rails.env.test?
 
       puts "\n\n *** Creating User *** \n\n"
 
-      user = create(
-        :user,
-        email: "user@example.com",
-        name: "Example User",
-        password: "password"
-      )
+      users = [
+        create(
+          :user,
+          email: "user@example.com",
+          name: "Example User",
+          password: "password"
+        ),
+        create(
+          :user,
+          email: "user2@example.com",
+          name: "Example User 2",
+          password: "password"
+        )
+      ]
 
-      puts "Created user #{user.email} / #{user.password} \n"
+      users.each do |user|
+        puts "Created user #{user.email} / #{user.password} \n"
+      end
 
       puts "\n\n *** Creating Account for user *** \n\n"
 
-      account = create :account, user: user
-
-      puts "Created account for user #{user.name} / Balance: #{account.balance}\n"
+      users.each do |user|
+        account = create :account, user: user
+        puts "Created account for user #{user.name} / Balance: #{account.balance}\n"
+      end
     end
   end
 end

@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   resource :dashboard, only: [:show]
   resource :registration, only: [:new, :create]
+  resources :transfers, only: [:new, :create]
 end

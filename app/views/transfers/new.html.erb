@@ -1,0 +1,20 @@
+<section class="registration">
+  <div class="title">
+    <h2>Make a transfer.</h2>
+
+    <p>
+      Select your intended receiver, input the amount you want to transfer 
+      and a message, if you want to. Simple.
+    </p>
+    <hr>
+  </div>
+
+  <%= simple_form_for @transfer, url: transfers_path do |form_builder| %>
+    <%= form_builder.input :receiver, collection: @transfer.receiving_users_list %>
+    <%= form_builder.input :amount %>
+
+    <div class="form-action">
+      <%= form_builder.submit t(".submit") %>
+    </div>
+  <% end %>
+</section>

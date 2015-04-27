@@ -1,8 +1,15 @@
 <tr>
-  <td><%= time_tag debit.created_at, debit.created_at.to_date %></td>
+  <td>
+    <%= time_tag debit.created_at, debit.created_at.to_date %>
+  </td>
   <td>Debit</td>
   <td>Transfer to <%= debit.receiver.name %></td>
   <td>-</td>
-  <td><%= number_to_currency debit.amount, unit: debit.account.currency_unit %>
-  <td><%= number_to_currency debit.account_balance, unit: debit.account.currency_unit %>
+  <td>
+    <%= number_to_currency debit.amount, unit: debit.account_currency_unit %>
+  </td>
+  <td>
+    <%= number_to_currency debit.account_balance,
+      unit: debit.account_currency_unit %>
+  </td>
 </tr>

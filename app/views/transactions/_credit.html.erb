@@ -1,8 +1,15 @@
 <tr>
-  <td><%= time_tag credit.created_at, credit.created_at.to_date %></td>
+  <td>
+    <%= time_tag credit.created_at, credit.created_at.to_date %>
+  </td>
   <td>Credit</td>
   <td>Transfer from <%= credit.emitter.name %></td>
   <td>-</td>
-  <td><%= number_to_currency credit.amount, unit: credit.account.currency_unit %>
-  <td><%= number_to_currency credit.account_balance, unit: credit.account.currency_unit %>
+  <td>
+    <%= number_to_currency credit.amount, unit: credit.account_currency_unit %>
+  </td>
+  <td>
+    <%= number_to_currency credit.account_balance,
+      unit: credit.account_currency_unit %>
+  </td>
 </tr>

@@ -1,19 +1,14 @@
-class Debit < ActiveRecord::Base
+class Deposit < ActiveRecord::Base
   belongs_to :account
-  belongs_to :receiving_account, class_name: "Account"
 
   after_create :update_account_balance
 
   def to_partial_path
-    "transactions/debit"
+    "transactions/deposit"
   end
 
   def account_currency_unit
     account.currency_unit
-  end
-
-  def receiver
-    receiving_account.user
   end
 
   private

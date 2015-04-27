@@ -14,6 +14,9 @@ class Dashboard
   end
 
   def transactions
-    account.transactions.map(&:operation)
+    Transaction.
+      where(account: account).
+      ordered_by_descending_created_at.
+      map(&:operation)
   end
 end

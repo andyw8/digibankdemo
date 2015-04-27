@@ -15,7 +15,7 @@ FactoryGirl.define do
   end
 
   factory :account do
-    balance { BigDecimal.new("0.0") }
+    balance BigDecimal.new("0.0")
     user nil
   end
 

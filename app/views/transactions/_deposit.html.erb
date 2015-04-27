@@ -1,0 +1,16 @@
+<tr>
+  <td>
+    <%= time_tag deposit.created_at, deposit.created_at.to_date %>
+  </td>
+  <td>Deposit</td>
+  <td>-</td>
+  <td>
+    <%= number_to_currency deposit.amount,
+      unit: deposit.account_currency_unit %>
+  </td>
+  <td>-</td>
+  <td>
+    <%= number_to_currency deposit.account_balance,
+      unit: deposit.account_currency_unit %>
+  </td>
+</tr>

@@ -27,6 +27,14 @@ use the following command:
 RegistrationForm.new(name: "user name", email: "user email", password: "user_password").submit
 ```
 
+In order to deposit money into an account, run `bundle exec rails c` and use the 
+following commands (assumes an user with `user@example.com` exists):
+
+```
+user = User.find_by(email: "user@example.com")
+DepositTeller.new(amount: "1", receiver: user)
+```
+
 It assumes you have a machine equipped with Ruby, Postgres, etc. If not, set up
 your machine with [this script].
 

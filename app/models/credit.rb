@@ -8,6 +8,10 @@ class Credit < ActiveRecord::Base
     "transactions/credit"
   end
 
+  def account_currency_unit
+    account.currency_unit
+  end
+
   def emitter
     emitting_account.user
   end
